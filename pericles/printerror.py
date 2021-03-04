@@ -1,0 +1,14 @@
+import linecache
+import sys
+
+# catches errors and prints what line of code the excpetion is from
+def PrintException(x):
+    exc_type, exc_obj, tb = sys.exc_info()
+    f = tb.tb_frame
+    lineno = tb.tb_lineno
+    filename = f.f_code.co_filename
+    linecache.checkcache(filename)
+    line = linecache.getline(filename, lineno, f.f_globals)
+    print('\n***************************************************************')
+    print('Caught this error: ' + repr(x))
+    print('EXCEPTION IN ({}, LINE {} "{}"): {}'.format(filename, lineno, line.strip(), exc_obj, exc_type))
