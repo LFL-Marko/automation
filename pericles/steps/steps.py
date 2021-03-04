@@ -30,20 +30,14 @@ def i_click_on_the_cta(context, cta):
         gl_el = wt.until(
             EC.presence_of_element_located((By.LINK_TEXT,
             "Guest List")))
-
-        driver.implicitly_wait(10)
         gl_el.click()
-        time.sleep(10)
     except Exception as error:
         PrintException(error)
-        print("I am clicking!")
 
 @then('I will be navigated to the "{page}" page')
 def i_will_be_navigated_to_the_page(context, page):
     try:
         url = driver.current_url
-        print(url)
         assert url == "https://admin-meraki-qa.eventably.co/guests/list"
     except Exception as error:
         PrintException(error)
-    print("I have been navigated to the {page}!")
