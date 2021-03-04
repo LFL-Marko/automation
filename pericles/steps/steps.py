@@ -7,7 +7,7 @@ from behave import *
 import environment
 import time
 from framework.webapp import webapp
-from pages import guest_registration
+from pages import guest_list_page
 from printerror import PrintException
 
 driver = webapp.get_driver()
