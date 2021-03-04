@@ -1,5 +1,5 @@
 from framework.webapp import webapp
-from pages.guest_list import GuestListPage
+from pages.guest_list_page import GuestListPage
 
 def before_all(context):
     # to access more logic for steps and store them in context
