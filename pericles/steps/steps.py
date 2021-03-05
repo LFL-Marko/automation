@@ -11,7 +11,7 @@ from pages import guest_list_page
 from printerror import PrintException
 
 driver = webapp.get_driver()
-wt = WebDriverWait(driver, 17)
+wt = WebDriverWait(driver, 5)
 
 @given('I go to the admin page')
 def i_log_in_as(context):
