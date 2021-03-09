@@ -4,7 +4,7 @@ Scenario: Verify the guest/registrant list tab is accessible
 
     Given I go to the admin page
     When I click on the "Guest List" cta
-    Then I will be navigated to the "Guest List" page
+    Then I will be navigated to the Guest List page
 
 # Scenario: Verify the registration list tab displays the correct data
 # Scenario: Verify the guest/registrant list tab is accessible
