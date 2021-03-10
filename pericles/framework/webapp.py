@@ -1,6 +1,5 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from pages.guest_list_page import GuestListElements
 
 from data.config import settings
 from urllib.parse import urljoin
@@ -26,7 +25,7 @@ class WebApp():
     def get_driver(self):
         return self.driver
 
-    def load_website(self, url):
+    def load_website(self):
         self.driver.get(settings['url'])
 
     # add to the settings.json so that the page url can be accessed as well

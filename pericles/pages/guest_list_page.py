@@ -1,10 +1,11 @@
 from framework.webapp import webapp
+from selenium.webdriver.common.by import By
 
 
-class GuestListElements(object):
+class GuestListElements():
 
     GUEST_LIST_URL = 'https://admin-meraki-qa.eventably.co/guests/list'
-    GUEST_LIST_CTA = '//*[@id="root"]/div/div[1]/ul/li[11]/a'
+    GUEST_LIST_CTA = (By.XPATH,'//*[@id="root"]/div/div[1]/ul/li[11]/a')
     PAGE_HEADING = '//*[@id="root"]/div/div[2]/div/main/div/div/div/h2'
     TOTAL_REGS = '//*[@id="root"]/div/div[2]/div/main/div/div/div/section[1]/div[2]/span[2]'
     ADD_ATTENDEE = '//*[@id="root"]/div/div[2]/div/main/div/div/div/section[2]/div[2]/table/tbody/tr[1]/td[5]/div/button'
@@ -47,13 +48,16 @@ class GuestListPage():
     def __init__(self):
         self.driver = webapp.get_driver()
 
-    def verify_url(self, expected_url):
-        url = self.driver.current_url()
+    def get_url(self):
+        webapp.get_url() = self.driver.current_url
+
+    def verify_url(expected_url):
+    
         expected_url = GuestListPage.format(expected_url)
         print(url)
-        assert url == expected_url, "The URL is not the expected url for the Guest List page"\
+        assert webapp.get_url() == expected_url, "The URL is not the expected url for the Guest List page"\
                                            " Expected: {}, Actual: {}".format(expected_url, url)
-    print("The page url is as expected.")
+        print("The page url is as expected.")
 
 guest_list = GuestListPage.get_instance()
-gl_el = GuestListElements()
+# gl_el = GuestListElements()
