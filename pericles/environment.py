@@ -1,14 +1,11 @@
 from framework.webapp import webapp
-from pages.guest_list_page import GuestListPage
+from pages.guest_list_page import GuestListElements
 from allure_behave.hooks import allure_report
 
 
 def before_all(context):
-    # to access more logic for steps and store them in context
-    # as well as store page variables 
-    context.gl_el = GuestListElements
+    context.guest_list_url = GuestListElements.GUEST_LIST_URL
     
-
 def after_step(context, step):
     print("")
     
